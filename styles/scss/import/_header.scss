@@ -1,0 +1,19 @@
+header {
+    background-color: $primary_color;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 98%;
+        border: 5px solid $accent-darker-color;
+        border-top: none;
+        padding: 40px;
+    }
+}
