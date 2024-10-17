@@ -1,19 +1,46 @@
 header {
-    background-color: $primary_color;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 48px;
+    padding: 0 5rem;
+    @include grid(200px 1fr 200px);
 
     nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        width: 98%;
-        border: 5px solid $accent-darker-color;
-        border-top: none;
-        padding: 40px;
+        width: fit-content;
+        height: 60px;
+        border-radius: 50px;
+        background-color: rgba(lighten($primary_color, 5%), 0.5);
+        border: 1px solid lighten($primary_color, 20%);
+        backdrop-filter: blur(10px);
+        padding: 0 3rem;
+        @include flex(3rem, center);
+        color: $text-dark_color;
+        font-size: 1.125rem;
+
+        a {
+            transition: color 0.3s;
+
+            &:hover {
+                color: $text_color;
+            }
+        }
+    }
+
+    .headerimg {
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .sidebtn {
+        @extend nav;
+        padding: 0 2rem;
+        width: fit-content;
+        height: 60px;
+        color: $text_color;
+        @include flex();
+        transition: border 0.3s;
+
+        &:hover {
+            border: 1px solid lighten($primary_color, 40%);
+        }
     }
 }
