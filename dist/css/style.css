@@ -76,6 +76,9 @@ header .sidebtn {
   gap: 0;
   transition: border 0.3s;
 }
+header .sidebtn i {
+  margin-right: 10px;
+}
 header .sidebtn:hover {
   border: 1px solid #737373;
 }/*# sourceMappingURL=style.css.map */
