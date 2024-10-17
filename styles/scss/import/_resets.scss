@@ -11,7 +11,7 @@
 body {
     font-family: 'PT sans', sans-serif;
     min-height: 100vh;
-    user-select: none;
+    // user-select: none;
     overflow-x: hidden;
     background-color: $primary_color;
     color: $text_color;
@@ -37,6 +37,11 @@ a {
 
 .section.active {
     display: block;
+}
+
+::selection {
+    background: $select_color;
+    color: $accent-text_color;
 }
 
 #blur-circle {

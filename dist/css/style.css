@@ -12,9 +12,6 @@
 body {
   font-family: "PT sans", sans-serif;
   min-height: 100vh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   overflow-x: hidden;
   background-color: #0d0d0d;
   color: #e8e8e0;
@@ -40,6 +37,16 @@ a {
 
 .section.active {
   display: block;
+}
+
+::-moz-selection {
+  background: #e6e6e6;
+  color: #0d0d0d;
+}
+
+::selection {
+  background: #e6e6e6;
+  color: #0d0d0d;
 }
 
 #blur-circle {
@@ -125,7 +132,7 @@ header .sidebtn:hover {
 .project-container .project {
   background-color: #191919;
   border-radius: 15px;
-  border: 1px solid #404040;
+  border: 1.5px solid #404040;
   height: 300px;
   transition: transform 0.3s ease;
   transform-style: preserve-3d;
@@ -158,17 +165,18 @@ header .sidebtn:hover {
 }
 .project-container .project .content a {
   background-color: #0d0d0d;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5rem 1rem;
-  color: #fff;
+  background-color: #007bff;
+  color: #0d0d0d;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 .project-container .project .content a:hover {
-  background-color: black;
+  background-color: #0062cc;
 }
 .project-container .project .content h3 {
   font-size: 1.5rem;
@@ -182,7 +190,7 @@ header .sidebtn:hover {
   transition: top 0.3s;
 }
 .project-container .project:hover img {
-  filter: brightness(0.5);
+  filter: brightness(0.5) blur(1px);
 }
 
 .filter-projects {
