@@ -3,7 +3,7 @@ header {
     top: $header_margin;
     padding: 0 $header_padding;
     z-index: 1000;
-    @include grid(200px 1fr 200px);
+    @include grid(1fr 1fr 1fr);
 
     nav {
         width: fit-content;

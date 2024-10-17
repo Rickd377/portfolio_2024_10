@@ -35,11 +35,24 @@
 
             <div class="filter-projects">
                 <i class="fa-regular fa-filter"></i>
+                <div class="dropdown">
+                    <div class="sort-options">
+                        <label><input type="radio" name="sort" value="newest"> Newest</label>
+                        <label><input type="radio" name="sort" value="oldest" checked> Oldest</label>
+                    </div>
+                    <div class="filter-options">
+                        <label><input type="checkbox" class="filter-checkbox" value="school"> School</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="solo"> Solo</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="group"> Group</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="own"> Own</label>
+                    </div>
+                </div>
+                <div class="filter-count">0</div>
             </div>
 
             <div class="project-container">
                 <!-- row 1 -->
-                <div class="project">
+                <div class="project school solo">
                     <img src="./img/technowire.png" alt="project image">
                     <div class="content">
                         <h3>Technowire</h3>
@@ -47,7 +60,7 @@
                         <a href="./documents/technowire/index.html" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project school solo">
                     <img src="./img/coinchase.png" alt="project image">
                     <div class="content">
                         <h3>Coinchase</h3>
@@ -55,7 +68,7 @@
                         <a href="./documents/coinchase/JavaGame/index.html" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project school group">
                     <img src="./img/gamecraft.png" alt="project image">
                     <div class="content">
                         <h3>Gamecraft</h3>
@@ -63,7 +76,7 @@
                         <a href="./documents/gamecraft/html/index.html" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project school solo">
                     <img src="./img/guestbook.png" alt="project image">
                     <div class="content">
                         <h3>Guestbook</h3>
@@ -73,7 +86,7 @@
                 </div>
 
                 <!-- row 2 -->
-                <div class="project">
+                <div class="project school group">
                     <img src="./img/ergowijzer.png" alt="project image">
                     <div class="content">
                         <h3>Ergowijzer</h3>
@@ -81,7 +94,7 @@
                         <a href="./documents/ergowijzer/php/index.php" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project school solo">
                     <img src="./img/yard.png" alt="project image">
                     <div class="content">
                         <h3>Yard</h3>
@@ -89,7 +102,7 @@
                         <a href="./documents/yard/index.html" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project school group">
                     <img src="./img/bbe.png" alt="project image">
                     <div class="content">
                         <h3>Food Delivery</h3>
@@ -97,7 +110,7 @@
                         <a href="./documents/food_delivery/index.php" target="_blank">Open project</a>
                     </div>
                 </div>
-                <div class="project">
+                <div class="project own solo">
                     <img src="./img/tunewave.png" alt="project image">
                     <div class="content">
                         <h3>TuneWave</h3>
@@ -107,7 +120,7 @@
                 </div>
 
                 <!-- row 3 -->
-                <div class="project">
+                <div class="project own solo">
                     <img src="./img/personal_interface.png" alt="project image">
                     <div class="content">
                         <h3>Personal Interface</h3>
@@ -128,6 +141,7 @@
 
     <script src="./js/page.js"></script>
     <script src="./js/mousetrack.js"></script>
+    <script src="./js/filter_projects.js"></script>
 </body>
 
 </html>
