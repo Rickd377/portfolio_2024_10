@@ -169,14 +169,14 @@ header .sidebtn:hover {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: #238dff;
   color: #0d0d0d;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 .project-container .project .content a:hover {
-  background-color: #0062cc;
+  background-color: #0073ef;
 }
 .project-container .project .content h3 {
   font-size: 1.5rem;
