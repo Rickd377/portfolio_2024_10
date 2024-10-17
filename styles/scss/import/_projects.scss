@@ -1,0 +1,98 @@
+.project-container {
+    margin: $header_margin * 4 + $header_height auto $header_margin auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 $header_padding;
+    perspective: 1000px;
+
+    .project {
+        background-color: $box_color;
+        border-radius: 15px;
+        border: 1px solid lighten($primary_color, 20%);
+        height: 300px;
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            filter: brightness(0.9);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s;
+            transition: filter 0.3s;
+            border-radius: 15px;
+        }
+
+        .content {
+            position: absolute;
+            top: 100%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            transition: top 0.3s;
+            padding: 1rem 1.2rem;
+            height: 100%;
+
+            a {
+                background-color: $primary_color;
+                margin-top: 0.5rem;
+                width: fit-content;
+                padding: 0.5rem 1rem;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+        
+                &:hover {
+                    background-color: darken($primary_color, 10%);
+                }
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        &:hover {
+            transform: translateZ(-15px);
+
+            .content {
+                top: 0;
+                transition: top 0.3s;
+            }
+
+            img {
+                filter: brightness(0.5);
+            }
+        }
+    }
+}
+
+.filter-projects {
+    position: absolute;
+    left: $header_padding;
+    top: $header_margin + $header_height;
+    margin: $header_margin 0;
+    width: $header_margin;
+    height: $header_margin;
+    background-color: #fff;
+    @include flex();
+    border-radius: 50px;
+    cursor: pointer;
+
+    i {
+        @include flex();
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+        color: $primary_color;
+    }
+}

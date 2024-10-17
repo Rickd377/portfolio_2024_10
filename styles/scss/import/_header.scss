@@ -1,14 +1,15 @@
 header {
     position: sticky;
-    top: 48px;
-    padding: 0 5rem;
+    top: $header_margin;
+    padding: 0 $header_padding;
+    z-index: 1000;
     @include grid(200px 1fr 200px);
 
     nav {
         width: fit-content;
-        height: 60px;
+        height: $header_height;
         border-radius: 50px;
-        background-color: rgba(lighten($primary_color, 5%), 0.5);
+        background-color: rgba(lighten($primary_color, 5%), 0.7);
         border: 1px solid lighten($primary_color, 20%);
         backdrop-filter: blur(10px);
         padding: 0 3rem;
@@ -19,6 +20,10 @@ header {
         a {
             transition: color 0.3s;
 
+            &.active {
+                color: darken($text_color, 20%);
+            }
+
             &:hover {
                 color: $text_color;
             }
@@ -28,16 +33,17 @@ header {
     .headerimg {
         height: 60px;
         border-radius: 5px;
+        justify-self: start;
     }
 
     .sidebtn {
         @extend nav;
         padding: 0 2rem;
         width: fit-content;
-        height: 60px;
         color: $text_color;
         @include flex();
         transition: border 0.3s;
+        justify-self: end;
 
         i {
             margin-right: 10px;

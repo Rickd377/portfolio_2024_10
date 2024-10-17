@@ -12,7 +12,9 @@ body {
     font-family: 'PT sans', sans-serif;
     min-height: 100vh;
     user-select: none;
+    overflow-x: hidden;
     background-color: $primary_color;
+    color: $text_color;
 }
 
 img, picture, svg, video {
@@ -23,4 +25,28 @@ img, picture, svg, video {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.section {
+    display: none;
+    min-height: 100dvh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.section.active {
+    display: block;
+}
+
+#blur-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: -10;
+    transition: left 0.1s ease, top 0.1s ease;
 }
