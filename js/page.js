@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.appendChild(filterProjects);
             filterProjects.classList.add('in-nav');
             filterProjects.style.display = 'flex';
-            nav.style.padding = '0 0 0 60px';
+            nav.classList.add('in-projects');
+            nav.style.padding = '0 0 0 60px'; // Add padding to the left
         } else {
             document.body.appendChild(filterProjects);
             filterProjects.classList.remove('in-nav');
             filterProjects.style.display = 'none';
-            nav.style.padding = '0 60px';
+            nav.classList.remove('in-projects');
+            nav.style.padding = '0 60px'; // Reset padding
         }
     }
 

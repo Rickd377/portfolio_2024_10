@@ -20,7 +20,7 @@ if (window.location.pathname === '/' || window.location.pathname === '/index.htm
     scene.add(mesh);
 
     const wireMat = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: 0x7a7a7a,
         wireframe: true,
     });
     const wireMesh = new THREE.Mesh(geo, wireMat);

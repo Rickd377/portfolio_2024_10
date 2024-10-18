@@ -94,6 +94,9 @@ header nav, header .sidebtn {
   color: #7a7a7a;
   font-size: 1.125rem;
 }
+header nav.in-projects, header .in-projects.sidebtn {
+  padding-left: 60px; /* Extend on the left side */
+}
 header nav a, header .sidebtn a {
   transition: color 0.3s;
 }
@@ -120,6 +123,9 @@ header nav .filter-projects, header .sidebtn .filter-projects {
   border-radius: 50px;
   cursor: pointer;
   z-index: 9999;
+}
+header nav .filter-projects.in-nav, header .sidebtn .filter-projects.in-nav {
+  display: flex; /* Show when in nav */
 }
 header nav .filter-projects i, header .sidebtn .filter-projects i {
   display: flex;

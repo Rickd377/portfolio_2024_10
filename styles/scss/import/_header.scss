@@ -17,6 +17,11 @@ header {
         @include flex(3rem, center);
         color: $text-dark_color;
         font-size: 1.125rem;
+        // transition: padding 0.3s ease;
+
+        &.in-projects {
+            padding-left: 60px; /* Extend on the left side */
+        }
 
         a {
             transition: color 0.3s;
@@ -44,6 +49,10 @@ header {
             border-radius: 50px;
             cursor: pointer;
             z-index: 9999;
+
+            &.in-nav {
+                display: flex; /* Show when in nav */
+            }
 
             i {
                 @include flex();
