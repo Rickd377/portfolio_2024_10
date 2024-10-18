@@ -12,6 +12,9 @@
 body {
   font-family: "PT sans", sans-serif;
   min-height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   overflow-x: hidden;
   background-color: #0d0d0d;
   color: #e8e8e0;
@@ -57,8 +60,18 @@ a {
   border-radius: 50%;
   filter: blur(20px);
   pointer-events: none;
-  z-index: -10;
+  z-index: -1;
   transition: left 0.1s ease, top 0.1s ease;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  z-index: -1; /* Ensure the canvas is behind other content */
+  background-color: #0d0d0d; /* Set the background color to $primary_color */
 }
 
 header {
@@ -162,6 +175,9 @@ header .sidebtn:hover {
   transition: top 0.3s;
   padding: 1rem 1.2rem;
   height: 100%;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
 }
 .project-container .project .content a {
   background-color: #0d0d0d;

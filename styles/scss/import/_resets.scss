@@ -11,7 +11,7 @@
 body {
     font-family: 'PT sans', sans-serif;
     min-height: 100vh;
-    // user-select: none;
+    user-select: none;
     overflow-x: hidden;
     background-color: $primary_color;
     color: $text_color;
@@ -52,6 +52,16 @@ a {
     border-radius: 50%;
     filter: blur(20px);
     pointer-events: none;
-    z-index: -10;
+    z-index: -1;
     transition: left 0.1s ease, top 0.1s ease;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100%;
+    z-index: -1; /* Ensure the canvas is behind other content */
+    background-color: #0d0d0d; /* Set the background color to $primary_color */
 }

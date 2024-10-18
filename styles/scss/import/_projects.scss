@@ -39,6 +39,7 @@
             transition: top 0.3s;
             padding: 1rem 1.2rem;
             height: 100%;
+            user-select: auto;
 
             a {
                 background-color: $primary_color;
