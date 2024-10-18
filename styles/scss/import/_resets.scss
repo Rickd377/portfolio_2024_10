@@ -33,6 +33,7 @@ a {
     width: 100%;
     position: absolute;
     top: 0;
+    padding: $header_height + $header_margin * 2 $header_padding $header_height $header_padding
 }
 
 .section.active {

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('.section');
+    const filterProjects = document.querySelector('.filter-projects');
+    const nav = document.querySelector('nav');
 
     function activateSection(targetId) {
         sections.forEach(section => section.classList.remove('active'));
@@ -15,12 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function moveDropdownButton(targetId) {
+        if (targetId === 'projects') {
+            nav.appendChild(filterProjects);
+            filterProjects.classList.add('in-nav');
+            filterProjects.style.display = 'flex';
+            nav.style.padding = '0 0 0 60px';
+        } else {
+            document.body.appendChild(filterProjects);
+            filterProjects.classList.remove('in-nav');
+            filterProjects.style.display = 'none';
+            nav.style.padding = '0 60px';
+        }
+    }
+
     links.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             activateSection(targetId);
             activateLink(targetId);
+            moveDropdownButton(targetId);
             history.pushState(null, '', `#${targetId}`);
         });
     });
@@ -29,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentHash) {
         activateSection(currentHash);
         activateLink(currentHash);
+        moveDropdownButton(currentHash);
     } else if (sections.length > 0) {
         sections[0].classList.add('active');
         links[0].classList.add('active');
@@ -39,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentHash) {
             activateSection(currentHash);
             activateLink(currentHash);
+            moveDropdownButton(currentHash);
         } else if (sections.length > 0) {
             sections[0].classList.add('active');
             links[0].classList.add('active');
