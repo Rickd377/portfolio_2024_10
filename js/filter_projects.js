@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.stopPropagation();
         const isActive = dropdown.style.display === 'block';
         dropdown.style.display = isActive ? 'none' : 'block';
-        filterProjects.classList.toggle('active', !isActive);
+        filterProjects.classList.toggle('dropdown-active', !isActive);
     });
 
     // Prevent dropdown from hiding when clicking inside it
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         if (!filterProjects.contains(event.target)) {
             dropdown.style.display = 'none';
-            filterProjects.classList.remove('active');
+            filterProjects.classList.remove('dropdown-active');
         }
     });
 

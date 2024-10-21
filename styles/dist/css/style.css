@@ -127,6 +127,9 @@ header nav .filter-projects, header .sidebtn .filter-projects {
 header nav .filter-projects.in-nav, header .sidebtn .filter-projects.in-nav {
   display: flex; /* Show when in nav */
 }
+header nav .filter-projects.dropdown-active, header .sidebtn .filter-projects.dropdown-active {
+  border-radius: 50px 50px 0 0;
+}
 header nav .filter-projects i, header .sidebtn .filter-projects i {
   display: flex;
   justify-content: center;
@@ -144,10 +147,8 @@ header nav .filter-projects .dropdown, header .sidebtn .filter-projects .dropdow
   left: 0;
   width: 150px;
   background-color: #fff;
-  border: 1px solid #0d0d0d;
   border-radius: 5px;
   border-top-left-radius: 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 header nav .filter-projects .dropdown .sort-options, header .sidebtn .filter-projects .dropdown .sort-options {
   border-bottom: 1px solid #a6a6a6;

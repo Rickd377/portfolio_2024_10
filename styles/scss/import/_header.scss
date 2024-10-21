@@ -54,6 +54,10 @@ header {
                 display: flex; /* Show when in nav */
             }
 
+            &.dropdown-active {
+                border-radius: 50px 50px 0 0;
+            }
+
             i {
                 @include flex();
                 width: 1rem;
@@ -69,10 +73,8 @@ header {
                 left: 0;
                 width: 150px;
                 background-color: $white_color;
-                border: 1px solid $primary_color;
                 border-radius: 5px;
                 border-top-left-radius: 0;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
                 .sort-options {
                     border-bottom: 1px solid lighten($primary_color, 60%);
