@@ -1,3 +1,21 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -10,10 +28,19 @@
         border-radius: 15px;
         border: 1.5px solid lighten($primary_color, 20%);
         height: 300px;
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease;
         transform-style: preserve-3d;
         overflow: hidden;
         position: relative;
+        opacity: 0; // Start with opacity 0
+
+        &.visible {
+            animation: fadeIn 0.5s forwards;
+        }
+
+        &.hidden {
+            animation: fadeOut 0.5s forwards;
+        }
 
         img {
             width: 100%;
@@ -24,8 +51,7 @@
             z-index: -1;
             top: 0;
             left: 0;
-            transition: transform 0.3s;
-            transition: filter 0.3s;
+            transition: transform 0.3s, filter 0.3s;
             border-radius: 15px;
         }
 
@@ -50,7 +76,7 @@
                 text-decoration: none;
                 border-radius: 5px;
                 transition: background-color 0.3s ease;
-        
+
                 &:hover {
                     background-color: darken($accent_color, 10%);
                 }

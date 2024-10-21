@@ -198,6 +198,22 @@ header .sidebtn:hover {
   border: 1px solid #737373;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .project-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -210,10 +226,17 @@ header .sidebtn:hover {
   border-radius: 15px;
   border: 1.5px solid #404040;
   height: 300px;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   transform-style: preserve-3d;
   overflow: hidden;
   position: relative;
+  opacity: 0;
+}
+.project-container .project.visible {
+  animation: fadeIn 0.5s forwards;
+}
+.project-container .project.hidden {
+  animation: fadeOut 0.5s forwards;
 }
 .project-container .project img {
   width: 100%;
@@ -224,8 +247,7 @@ header .sidebtn:hover {
   z-index: -1;
   top: 0;
   left: 0;
-  transition: transform 0.3s;
-  transition: filter 0.3s;
+  transition: transform 0.3s, filter 0.3s;
   border-radius: 15px;
 }
 .project-container .project .content {
@@ -285,6 +307,24 @@ header .sidebtn:hover {
   color: #238dff;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 #home .homepage-wrapper {
   display: flex;
   justify-content: center;
@@ -293,19 +333,21 @@ header .sidebtn:hover {
   width: 100%;
   height: 100%;
   margin-top: 10%;
+  animation: slideIn 1s ease-out;
 }
-#home .text-wrapper {
+#home .homepage-wrapper .text-wrapper {
   width: fit-content;
 }
-#home .text-wrapper .title {
+#home .homepage-wrapper .text-wrapper .title {
   font-size: 4.5rem;
   font-weight: bold;
+  animation: fadeIn 1.5s ease-out;
 }
-#home .text-wrapper .title .highlight {
+#home .homepage-wrapper .text-wrapper .title .highlight {
   color: transparent;
   -webkit-text-stroke: 2px #238dff;
 }
-#home .text-wrapper .socials {
+#home .homepage-wrapper .text-wrapper .socials {
   padding: 0.5rem 0.9rem;
   border-radius: 50px;
   margin-top: 1em;
@@ -317,8 +359,9 @@ header .sidebtn:hover {
   background-color: rgba(25.75, 25.75, 25.75, 0.7);
   border: 1px solid #404040;
   backdrop-filter: blur(10px);
+  animation: fadeIn 2s ease-out;
 }
-#home .text-wrapper .socials a {
+#home .homepage-wrapper .text-wrapper .socials a {
   font-size: 1.4rem;
 }
 

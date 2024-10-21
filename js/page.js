@@ -40,6 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
     links.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -47,19 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
             activateSection(targetId);
             activateLink(targetId);
             moveDropdownButton(targetId);
+            setCookie('activePage', targetId, 1);
             history.pushState(null, '', `#${targetId}`);
         });
     });
 
     const currentHash = window.location.hash.substring(1);
-    if (currentHash) {
-        activateSection(currentHash);
-        activateLink(currentHash);
-        moveDropdownButton(currentHash);
-    } else {
-        activateSection('home');
-        activateLink('home');
-    }
+    const savedPage = getCookie('activePage');
+    const initialPage = currentHash || savedPage || 'home';
+
+    activateSection(initialPage);
+    activateLink(initialPage);
+    moveDropdownButton(initialPage);
 
     window.addEventListener('popstate', () => {
         const currentHash = window.location.hash.substring(1);
@@ -67,9 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
             activateSection(currentHash);
             activateLink(currentHash);
             moveDropdownButton(currentHash);
+            setCookie('activePage', currentHash, 1);
         } else {
             activateSection('home');
             activateLink('home');
+            setCookie('activePage', 'home', 1);
         }
     });
 });
