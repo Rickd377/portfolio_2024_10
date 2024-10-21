@@ -18,6 +18,23 @@ body {
   background-color: #0d0d0d;
   color: #e8e8e0;
 }
+body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgba(64, 64, 64, 0.5); /* Background of the scrollbar track */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #7a7a7a; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid rgba(64, 64, 64, 0.5); /* Padding around the scrollbar thumb */
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(96.5, 96.5, 96.5); /* Color of the scrollbar thumb on hover */
+}
+body::-webkit-scrollbar-corner {
+  background: #404040; /* Background of the scrollbar corner */
+}
 
 img, picture, svg, video {
   max-width: 100%;
@@ -365,12 +382,31 @@ header .sidebtn:hover {
   font-size: 1.4rem;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 #contact {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0;
   backdrop-filter: blur(2px);
+  animation: slideIn 0.7s ease-out;
 }
 #contact .form-wrapper {
   display: flex;
@@ -379,6 +415,7 @@ header .sidebtn:hover {
   gap: 1rem;
   flex-direction: column;
   width: 50%;
+  animation: fadeIn 0.7s ease-out forwards;
 }
 #contact .form-wrapper .socials {
   display: flex;
@@ -387,7 +424,7 @@ header .sidebtn:hover {
   gap: 1rem;
   width: fit-content;
   backdrop-filter: blur(10px);
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 0.7s ease-out forwards;
 }
 #contact .form-wrapper .socials a {
   font-size: 1.4rem;
@@ -410,6 +447,10 @@ header .sidebtn:hover {
 #contact .form-wrapper .text-wrapper p {
   color: #7a7a7a;
 }
+#contact .form-wrapper h4 {
+  color: #7a7a7a;
+  font-size: 0.875rem;
+}
 #contact .form-wrapper form {
   display: flex;
   justify-content: center;
@@ -431,6 +472,26 @@ header .sidebtn:hover {
 #contact .form-wrapper form textarea::placeholder {
   color: rgb(210.2777777778, 210.2777777778, 194.7222222222);
 }
+#contact .form-wrapper form textarea {
+  padding-top: 0;
+}
+#contact .form-wrapper form textarea::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+#contact .form-wrapper form textarea::-webkit-scrollbar-track {
+  background: rgba(64, 64, 64, 0.5); /* Background of the scrollbar track */
+}
+#contact .form-wrapper form textarea::-webkit-scrollbar-thumb {
+  background-color: #238dff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid rgba(64, 64, 64, 0.5); /* Padding around the scrollbar thumb */
+}
+#contact .form-wrapper form textarea::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(0, 115.1545454545, 239); /* Color of the scrollbar thumb on hover */
+}
+#contact .form-wrapper form textarea::-webkit-scrollbar-corner {
+  background: #404040; /* Background of the scrollbar corner */
+}
 #contact .form-wrapper form input,
 #contact .form-wrapper form textarea,
 #contact .form-wrapper form .top-input-wrapper {
@@ -441,7 +502,7 @@ header .sidebtn:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 #contact .form-wrapper form button {
   align-self: flex-end;
