@@ -19,7 +19,6 @@ body {
 }
 
 img, picture, svg, video {
-    display: block;
     max-width: 100%;
 }
 
@@ -38,7 +37,7 @@ a {
 }
 
 .section.active {
-    display: block;
+    display: flex;
 }
 
 ::selection {

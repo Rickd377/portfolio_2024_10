@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const filterProjects = document.querySelector('.filter-projects');
     const nav = document.querySelector('nav');
-    const homeSection = document.getElementById('home');
 
     function activateSection(targetId) {
         sections.forEach(section => {
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.classList.add('active');
-            targetSection.style.display = 'block';
+            targetSection.style.display = 'flex';
         }
     }
 
@@ -40,24 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function setCookie(name, value, days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
     links.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -65,14 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             activateSection(targetId);
             activateLink(targetId);
             moveDropdownButton(targetId);
-            setCookie('activePage', targetId, 1);
             history.pushState(null, '', `#${targetId}`);
         });
     });
 
     const currentHash = window.location.hash.substring(1);
-    const savedPage = getCookie('activePage');
-    const initialPage = currentHash || savedPage || 'home';
+    const initialPage = currentHash || 'home';
 
     activateSection(initialPage);
     activateLink(initialPage);
@@ -84,11 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             activateSection(currentHash);
             activateLink(currentHash);
             moveDropdownButton(currentHash);
-            setCookie('activePage', currentHash, 1);
         } else {
             activateSection('home');
             activateLink('home');
-            setCookie('activePage', 'home', 1);
         }
     });
 });

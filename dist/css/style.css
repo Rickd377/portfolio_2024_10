@@ -22,7 +22,6 @@ body {
 }
 
 img, picture, svg, video {
-  display: block;
   max-width: 100%;
 }
 
@@ -41,7 +40,7 @@ a {
 }
 
 .section.active {
-  display: block;
+  display: flex;
 }
 
 ::-moz-selection {
@@ -230,6 +229,7 @@ header .sidebtn:hover {
   gap: 2rem;
   padding: 48px 0 0 0;
   perspective: 1000px;
+  width: 100%;
 }
 .project-container .project {
   background-color: #191919;
@@ -339,30 +339,25 @@ header .sidebtn:hover {
     opacity: 1;
   }
 }
-#home .homepage-wrapper {
-  display: flex;
+#home {
   justify-content: center;
   align-items: center;
-  gap: 0;
-  width: 100%;
-  height: 100%;
-  margin-top: 10%;
   animation: slideIn 1s ease-out;
 }
-#home .homepage-wrapper .text-wrapper {
+#home .text-wrapper {
   width: -moz-fit-content;
   width: fit-content;
 }
-#home .homepage-wrapper .text-wrapper .title {
+#home .text-wrapper .title {
   font-size: 4.5rem;
   font-weight: bold;
   animation: fadeIn 1.5s ease-out;
 }
-#home .homepage-wrapper .text-wrapper .title .highlight {
+#home .text-wrapper .title .highlight {
   color: transparent;
   -webkit-text-stroke: 2px #238dff;
 }
-#home .homepage-wrapper .text-wrapper .socials {
+#home .text-wrapper .socials {
   padding: 0.5rem 0.9rem;
   border-radius: 50px;
   margin-top: 1em;
@@ -378,6 +373,6 @@ header .sidebtn:hover {
           backdrop-filter: blur(10px);
   animation: fadeIn 2s ease-out;
 }
-#home .homepage-wrapper .text-wrapper .socials a {
+#home .text-wrapper .socials a {
   font-size: 1.4rem;
 }/*# sourceMappingURL=style.css.map */
