@@ -29,18 +29,21 @@
         border-radius: 15px;
         border: 1.5px solid lighten($primary_color, 20%);
         height: 300px;
-        transition: transform 0.5s ease, opacity 0.5s ease;
+        transition: transform 0.5s ease, opacity 1s ease;
         transform-style: preserve-3d;
         overflow: hidden;
         position: relative;
         opacity: 0; // Start with opacity 0
+        transform: translateY(20px); // Start with translateY
 
         &.visible {
-            animation: fadeIn 0.5s forwards;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         &.hidden {
-            animation: fadeOut 0.5s forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         img {

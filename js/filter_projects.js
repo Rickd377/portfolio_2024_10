@@ -77,4 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
     projects.forEach(project => {
         observer.observe(project);
     });
+
+    // Ensure projects are visible after initial load
+    setTimeout(() => {
+        projects.forEach(project => {
+            project.classList.add('visible');
+        });
+    }, 100);
 });

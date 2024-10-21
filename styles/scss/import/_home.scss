@@ -19,8 +19,7 @@
 }
 
 #home {
-    justify-content: center;
-    align-items: center;
+    @include flex();
     animation: slideIn 1s ease-out;
 
         .text-wrapper {
