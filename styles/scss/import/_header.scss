@@ -17,7 +17,6 @@ header {
         @include flex(3rem, center);
         color: $text-dark_color;
         font-size: 1.125rem;
-        // transition: padding 0.3s ease;
 
         &.in-projects {
             padding-left: 60px; /* Extend on the left side */

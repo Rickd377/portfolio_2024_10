@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   font: inherit;
+  z-index: 1;
 }
 
 body {
@@ -44,18 +45,6 @@ a {
 ::selection {
   background: #e6e6e6;
   color: #0d0d0d;
-}
-
-#blur-circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  filter: blur(20px);
-  pointer-events: none;
-  z-index: -1;
-  transition: left 0.1s ease, top 0.1s ease;
 }
 
 canvas {
@@ -277,6 +266,60 @@ header .sidebtn:hover {
 }
 .project-container .project:hover img {
   filter: brightness(0.5) blur(1px);
+}
+
+#home .typecontainer {
+  display: flex;
+  align-items: center;
+}
+#home .typecontainer .text {
+  position: relative;
+  font-size: 2rem;
+  color: #238dff;
+}
+#home .typecontainer .text.first-text {
+  color: #e8e8e0;
+  margin-right: 10px;
+}
+#home .typecontainer .text.second-text {
+  color: #238dff;
+}
+
+#home .homepage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+}
+#home .text-wrapper {
+  width: fit-content;
+}
+#home .text-wrapper .title {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+#home .text-wrapper .title .highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px #238dff;
+}
+#home .text-wrapper .socials {
+  padding: 0.5rem 0.9rem;
+  border-radius: 50px;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  background-color: rgba(25.75, 25.75, 25.75, 0.7);
+  border: 1px solid #404040;
+  backdrop-filter: blur(10px);
+}
+#home .text-wrapper .socials a {
+  font-size: 1.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

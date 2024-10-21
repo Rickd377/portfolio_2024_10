@@ -1,0 +1,21 @@
+#home {
+    .typecontainer {
+        display: flex;
+        align-items: center;
+
+        .text {
+            position: relative;
+            font-size: 2rem;
+            color: $accent_color;
+
+            &.first-text {
+                color: $text_color;
+                margin-right: 10px;
+            }
+
+            &.second-text {
+                color: $accent_color;
+            }
+        }
+    }
+}

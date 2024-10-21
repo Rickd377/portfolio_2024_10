@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     font: inherit;
+    z-index: 1;
 }
 
 body {
@@ -33,7 +34,7 @@ a {
     width: 100%;
     position: absolute;
     top: 0;
-    padding: $header_height + $header_margin * 2 $header_padding $header_height $header_padding
+    padding: $header_height + $header_margin * 2 $header_padding $header_height $header_padding;
 }
 
 .section.active {
@@ -43,18 +44,6 @@ a {
 ::selection {
     background: $select_color;
     color: $accent-text_color;
-}
-
-#blur-circle {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    filter: blur(20px);
-    pointer-events: none;
-    z-index: -1;
-    transition: left 0.1s ease, top 0.1s ease;
 }
 
 canvas {
