@@ -14,7 +14,7 @@
 
 .spinner {
     border: 16px solid rgba(lighten($primary_color, 20%), 40%);
-    border-top: 16px solid #3498db;
+    border-top: 16px solid $accent_color;
     border-radius: 50%;
     width: 120px;
     height: 120px;

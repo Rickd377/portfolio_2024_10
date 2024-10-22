@@ -559,7 +559,7 @@ header .sidebtn:hover {
 
 .spinner {
   border: 16px solid rgba(64, 64, 64, 0.4);
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #238dff;
   border-radius: 50%;
   width: 120px;
   height: 120px;
