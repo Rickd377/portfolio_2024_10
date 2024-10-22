@@ -50,12 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const currentHash = window.location.hash.substring(1);
-    const initialPage = currentHash || 'home';
-
-    activateSection(initialPage);
-    activateLink(initialPage);
-    moveDropdownButton(initialPage);
+    let currentHash = window.location.hash.substring(1);
+    if (!currentHash) {
+        currentHash = 'home';
+        history.replaceState(null, '', `#${currentHash}`);
+    }
+    activateSection(currentHash);
+    activateLink(currentHash);
+    moveDropdownButton(currentHash);
 
     window.addEventListener('popstate', () => {
         const currentHash = window.location.hash.substring(1);
