@@ -1,82 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const filterProjects = document.querySelector('.filter-projects');
-    const dropdown = filterProjects.querySelector('.dropdown');
-    const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
-    const sortOptions = document.querySelectorAll('input[name="sort"]');
-    const filterCount = document.querySelector('.filter-count');
-    const projects = document.querySelectorAll('.project');
-
-    filterProjects.addEventListener('click', function(event) {
-        event.stopPropagation();
-        const isActive = dropdown.style.display === 'block';
-        dropdown.style.display = isActive ? 'none' : 'block';
-        filterProjects.classList.toggle('dropdown-active', !isActive);
+document.addEventListener("DOMContentLoaded", function () {
+  const e = document.querySelector(".filter-projects"),
+    t = e.querySelector(".dropdown"),
+    o = document.querySelectorAll(".filter-checkbox"),
+    n = document.querySelectorAll('input[name="sort"]'),
+    c = document.querySelector(".filter-count"),
+    r = document.querySelectorAll(".project");
+  function s() {
+    const e = Array.from(o)
+      .filter((e) => e.checked)
+      .map((e) => e.value);
+    (c.textContent = e.length),
+      r.forEach((t) => {
+        const o = Array.from(t.classList),
+          n = e.every((e) => o.includes(e));
+        t.style.display = n ? "block" : "none";
+      });
+    const t = document.querySelector('input[name="sort"]:checked').value,
+      n = document.querySelector(".project-container");
+    Array.from(r).sort((e, o) =>
+      "newest" === t ? n.appendChild(o) : n.appendChild(e)
+    );
+  }
+  e.addEventListener("click", function (o) {
+    o.stopPropagation();
+    const n = "block" === t.style.display;
+    (t.style.display = n ? "none" : "block"),
+      e.classList.toggle("dropdown-active", !n);
+  }),
+    t.addEventListener("click", function (e) {
+      e.stopPropagation();
+    }),
+    document.addEventListener("click", function (o) {
+      e.contains(o.target) ||
+        ((t.style.display = "none"), e.classList.remove("dropdown-active"));
+    }),
+    o.forEach((e) => {
+      e.addEventListener("change", s);
+    }),
+    n.forEach((e) => {
+      e.addEventListener("change", s);
     });
-
-    dropdown.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!filterProjects.contains(event.target)) {
-            dropdown.style.display = 'none';
-            filterProjects.classList.remove('dropdown-active');
-        }
-    });
-
-    filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', applyFilters);
-    });
-
-    sortOptions.forEach(option => {
-        option.addEventListener('change', applyFilters);
-    });
-
-    function applyFilters() {
-        const selectedFilters = Array.from(filterCheckboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
-
-        filterCount.textContent = selectedFilters.length;
-
-        projects.forEach(project => {
-            const projectClasses = Array.from(project.classList);
-            const matchesFilter = selectedFilters.every(filter => projectClasses.includes(filter));
-            project.style.display = matchesFilter ? 'block' : 'none';
-        });
-
-        const sortOption = document.querySelector('input[name="sort"]:checked').value;
-        const projectContainer = document.querySelector('.project-container');
-        const sortedProjects = Array.from(projects).sort((a, b) => {
-            if (sortOption === 'newest') {
-                return projectContainer.appendChild(b);
-            } else {
-                return projectContainer.appendChild(a);
-            }
-        });
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                entry.target.classList.remove('hidden');
-            } else {
-                entry.target.classList.add('hidden');
-                entry.target.classList.remove('visible');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    projects.forEach(project => {
-        observer.observe(project);
-    });
-
+  const a = new IntersectionObserver(
+    (e) => {
+      e.forEach((e) => {
+        e.isIntersecting
+          ? (e.target.classList.add("visible"),
+            e.target.classList.remove("hidden"))
+          : (e.target.classList.add("hidden"),
+            e.target.classList.remove("visible"));
+      });
+    },
+    { threshold: 0.1 }
+  );
+  r.forEach((e) => {
+    a.observe(e);
+  }),
     setTimeout(() => {
-        projects.forEach(project => {
-            project.classList.add('visible');
-        });
+      r.forEach((e) => {
+        e.classList.add("visible");
+      });
     }, 100);
 });

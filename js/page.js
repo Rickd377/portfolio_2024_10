@@ -1,100 +1,72 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('.section');
-    const filterProjects = document.querySelector('.filter-projects');
-    const nav = document.querySelector('nav');
-    const mainDropdown = document.querySelector('.main-dropdown');
-    const dropdownLinks = document.querySelectorAll('.dropdown-content-header a');
-
-    function activateSection(targetId) {
-        sections.forEach(section => {
-            section.classList.remove('active');
-            section.style.display = 'none';
-        });
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            targetSection.style.display = 'flex';
-        }
-    }
-
-    function activateLink(targetId) {
-        links.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === targetId) link.classList.add('active');
-        });
-        dropdownLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === targetId) link.classList.add('active');
-        });
-    }
-
-    function moveDropdownButton(targetId) {
-        if (targetId === 'projects') {
-            nav.appendChild(filterProjects);
-            filterProjects.classList.add('in-nav');
-            filterProjects.style.display = 'flex';
-            nav.classList.add('in-projects');
-            nav.style.padding = '0 0 0 60px';
-        } else {
-            document.body.appendChild(filterProjects);
-            filterProjects.classList.remove('in-nav');
-            filterProjects.style.display = 'none';
-            nav.classList.remove('in-projects');
-            nav.style.padding = '0 60px';
-        }
-    }
-
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            activateSection(targetId);
-            activateLink(targetId);
-            moveDropdownButton(targetId);
-            history.pushState(null, '', `#${targetId}`);
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const e = document.querySelectorAll("nav a"),
+    t = document.querySelectorAll(".section"),
+    s = document.querySelector(".filter-projects"),
+    n = document.querySelector("nav"),
+    i = document.querySelector(".main-dropdown"),
+    o = document.querySelectorAll(".dropdown-content-header a");
+  function a(e) {
+    t.forEach((e) => {
+      e.classList.remove("active"), (e.style.display = "none");
     });
-
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            activateSection(targetId);
-            activateLink(targetId);
-            moveDropdownButton(targetId);
-            history.pushState(null, '', `#${targetId}`);
-            mainDropdown.classList.remove('active');
-        });
+    const s = document.getElementById(e);
+    s && (s.classList.add("active"), (s.style.display = "flex"));
+  }
+  function c(t) {
+    e.forEach((e) => {
+      e.classList.remove("active"),
+        e.getAttribute("href").substring(1) === t && e.classList.add("active");
+    }),
+      o.forEach((e) => {
+        e.classList.remove("active"),
+          e.getAttribute("href").substring(1) === t &&
+            e.classList.add("active");
+      });
+  }
+  function r(e) {
+    "projects" === e
+      ? (n.appendChild(s),
+        s.classList.add("in-nav"),
+        (s.style.display = "flex"),
+        n.classList.add("in-projects"),
+        (n.style.padding = "0 0 0 60px"))
+      : (document.body.appendChild(s),
+        s.classList.remove("in-nav"),
+        (s.style.display = "none"),
+        n.classList.remove("in-projects"),
+        (n.style.padding = "0 60px"));
+  }
+  e.forEach((e) => {
+    e.addEventListener("click", (t) => {
+      t.preventDefault();
+      const s = e.getAttribute("href").substring(1);
+      a(s), c(s), r(s), history.pushState(null, "", `#${s}`);
     });
-
-    mainDropdown.addEventListener('click', (event) => {
-        event.stopPropagation();
-        mainDropdown.classList.toggle('active');
+  }),
+    o.forEach((e) => {
+      e.addEventListener("click", (t) => {
+        t.preventDefault();
+        const s = e.getAttribute("href").substring(1);
+        a(s),
+          c(s),
+          r(s),
+          history.pushState(null, "", `#${s}`),
+          i.classList.remove("active");
+      });
+    }),
+    i.addEventListener("click", (e) => {
+      e.stopPropagation(), i.classList.toggle("active");
+    }),
+    document.addEventListener("click", () => {
+      i.classList.remove("active");
     });
-
-    document.addEventListener('click', () => {
-        mainDropdown.classList.remove('active');
-    });
-
-    let currentHash = window.location.hash.substring(1);
-    if (!currentHash) {
-        currentHash = 'home';
-        history.replaceState(null, '', `#${currentHash}`);
-    }
-    activateSection(currentHash);
-    activateLink(currentHash);
-    moveDropdownButton(currentHash);
-
-    window.addEventListener('popstate', () => {
-        const currentHash = window.location.hash.substring(1);
-        if (currentHash) {
-            activateSection(currentHash);
-            activateLink(currentHash);
-            moveDropdownButton(currentHash);
-        } else {
-            activateSection('home');
-            activateLink('home');
-        }
+  let l = window.location.hash.substring(1);
+  l || ((l = "home"), history.replaceState(null, "", `#${l}`)),
+    a(l),
+    c(l),
+    r(l),
+    window.addEventListener("popstate", () => {
+      const e = window.location.hash.substring(1);
+      e ? (a(e), c(e), r(e)) : (a("home"), c("home"));
     });
 });
