@@ -704,10 +704,10 @@ header .sidebtn:hover {
 }
 #about .about-wrapper img {
   max-height: 400px;
-  border-radius: 3px;
   grid-row: span 2;
   align-self: center;
-  filter: drop-shadow(10px 5px 5px rgba(35, 141, 255, 0.5)) drop-shadow(-10px -5px 5px rgba(43, 95, 238, 0.5));
+  border-radius: 1px;
+  box-shadow: 0 3px 0 #238dff, 0 6px 0 #2b5fee, 0 9px 0 #00157f, 0 -3px 0 #238dff, 0 -6px 0 #2b5fee, 0 -9px 0 #00157f, 3px 0 0 #238dff, 6px 0 0 #2b5fee, 9px 0 0 #00157f, -3px 0 0 #238dff, -6px 0 0 #2b5fee, -9px 0 0 #00157f, 3px 3px 0 #238dff, 6px 6px 0 #2b5fee, 9px 9px 0 #00157f, -3px -3px 0 #238dff, -6px -6px 0 #2b5fee, -9px -9px 0 #00157f, 3px -3px 0 #238dff, 6px -6px 0 #2b5fee, 9px -9px 0 #00157f, -3px 3px 0 #238dff, -6px 6px 0 #2b5fee, -9px 9px 0 #00157f;
 }
 @media screen and (max-width: 768px) {
   #about .about-wrapper img {
