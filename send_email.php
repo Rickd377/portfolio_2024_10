@@ -1,21 +1,10 @@
 <?php
-session_start(); // Start the session
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the user has already sent a message
-    if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
-        echo "<script>
-                alert('You can't send multiple messages. Please come back later.');
-                window.location.href = 'index.html#contact';
-              </script>";
-        exit();
-    }
-
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $subject = htmlspecialchars($_POST['subject']);
@@ -48,9 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Name: $name\nEmail: $email\nMessage:\n$message";
 
         $mail->send();
-
-        $_SESSION['message_sent'] = true;
-
         echo "<script>
                 alert('Message has been sent successfully!');
                 window.location.href = 'index.html#contact';

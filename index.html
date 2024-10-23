@@ -230,11 +230,11 @@
                 <h4>Or</h4>
                 <form class="contact-form" action="send_email.php" method="post">
                     <div class="top-input-wrapper">
-                        <input type="text" id="name" name="name" placeholder="Name">
-                        <input type="email" id="email" name="email" placeholder="Email">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off">
-                    <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off" required>
+                    <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
