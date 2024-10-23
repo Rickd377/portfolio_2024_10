@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterCount = document.querySelector('.filter-count');
     const projects = document.querySelectorAll('.project');
 
-    // Toggle dropdown visibility
     filterProjects.addEventListener('click', function(event) {
         event.stopPropagation();
         const isActive = dropdown.style.display === 'block';
@@ -14,12 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         filterProjects.classList.toggle('dropdown-active', !isActive);
     });
 
-    // Prevent dropdown from hiding when clicking inside it
     dropdown.addEventListener('click', function(event) {
         event.stopPropagation();
     });
 
-    // Hide dropdown when clicking outside of it
     document.addEventListener('click', function(event) {
         if (!filterProjects.contains(event.target)) {
             dropdown.style.display = 'none';
@@ -59,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll animations
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -78,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(project);
     });
 
-    // Ensure projects are visible after initial load
     setTimeout(() => {
         projects.forEach(project => {
             project.classList.add('visible');

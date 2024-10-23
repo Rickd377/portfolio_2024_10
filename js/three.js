@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(0x0d0d0d); // Set the background color to $primary_color
+    renderer.setClearColor(0x0d0d0d);
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 

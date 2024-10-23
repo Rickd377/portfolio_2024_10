@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             filterProjects.classList.add('in-nav');
             filterProjects.style.display = 'flex';
             nav.classList.add('in-projects');
-            nav.style.padding = '0 0 0 60px'; // Add padding to the left
+            nav.style.padding = '0 0 0 60px';
         } else {
             document.body.appendChild(filterProjects);
             filterProjects.classList.remove('in-nav');
             filterProjects.style.display = 'none';
             nav.classList.remove('in-projects');
-            nav.style.padding = '0 60px'; // Reset padding
+            nav.style.padding = '0 60px';
         }
     }
 
@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
             activateLink(targetId);
             moveDropdownButton(targetId);
             history.pushState(null, '', `#${targetId}`);
-            mainDropdown.classList.remove('active'); // Close dropdown after selection
+            mainDropdown.classList.remove('active');
         });
     });
 
     mainDropdown.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent click event from bubbling up to the document
+        event.stopPropagation();
         mainDropdown.classList.toggle('active');
     });
 
