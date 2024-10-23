@@ -24,6 +24,14 @@
     perspective: 1000px;
     width: 100%;
 
+    @media screen and (max-width: $mobileL) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    @media screen and (max-width: $mobileM) {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
     .project {
         background-color: $box_color;
         border-radius: 15px;

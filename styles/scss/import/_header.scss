@@ -4,6 +4,9 @@ header {
     padding: 0 $header_padding;
     z-index: 1000;
     @include grid(1fr 1fr 1fr);
+    @media screen and (max-width: $laptop) {
+        display: none;
+    }
 
     nav {
         width: fit-content;
@@ -141,5 +144,59 @@ header {
         &:hover {
             border: 1px solid lighten($primary_color, 40%);
         }
+    }
+}
+
+.main-dropdown {
+    display: none;
+
+    @media screen and (max-width: $laptop) {
+        display: block;
+        position: fixed;
+        font-size: 1.5rem;
+        top: $header_margin;
+        right: $header_padding / 1.6;
+        z-index: 1000;
+        padding: 1rem;
+        width: calc(2rem + 1.5rem);
+        height: calc(2rem + 1.5rem);
+        @include flex();
+        background-color: rgba(lighten($primary_color, 5%), 0.9);
+        border: 1px solid lighten($primary_color, 20%);
+        border-radius: 5px;
+    }
+
+    @media screen and (max-width: $mobileL) {
+        right: $header_padding / 3;
+    }
+
+    .dropdown-content-header {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(lighten($primary_color, 5%), 0.9);
+        border: 1px solid lighten($primary_color, 20%);
+        border-radius: 5px;
+        z-index: 1000;
+        min-width: 160px;
+        flex-direction: column;
+        
+        a {
+            font-size: 1.2rem;
+            padding: 5px 10px;
+            width: 100%;
+
+            &:first-child {
+                padding-top: 10px;
+            }
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    &.active .dropdown-content-header {
+        display: flex;
     }
 }

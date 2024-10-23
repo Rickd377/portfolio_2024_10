@@ -11,7 +11,7 @@
 
 body {
     font-family: 'PT sans', sans-serif;
-    min-height: 100vh;
+    min-height: 100dvh;
     user-select: none;
     overflow-x: hidden;
     background-color: $primary_color;
@@ -57,6 +57,10 @@ a {
     position: absolute;
     top: 0;
     padding: $header_height + $header_margin * 2 $header_padding $header_height $header_padding;
+
+    @media screen and (max-width: $tablet) {
+        padding: $header_height + $header_margin * 2 $header_padding / 2.3 $header_height $header_padding / 2.3;
+    }
 }
 
 .section.active {

@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const filterProjects = document.querySelector('.filter-projects');
     const nav = document.querySelector('nav');
+    const mainDropdown = document.querySelector('.main-dropdown');
+    const dropdownLinks = document.querySelectorAll('.dropdown-content-header a');
 
     function activateSection(targetId) {
         sections.forEach(section => {
@@ -18,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function activateLink(targetId) {
         links.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === targetId) link.classList.add('active');
+        });
+        dropdownLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').substring(1) === targetId) link.classList.add('active');
         });
@@ -48,6 +54,27 @@ document.addEventListener('DOMContentLoaded', () => {
             moveDropdownButton(targetId);
             history.pushState(null, '', `#${targetId}`);
         });
+    });
+
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            activateSection(targetId);
+            activateLink(targetId);
+            moveDropdownButton(targetId);
+            history.pushState(null, '', `#${targetId}`);
+            mainDropdown.classList.remove('active'); // Close dropdown after selection
+        });
+    });
+
+    mainDropdown.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent click event from bubbling up to the document
+        mainDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+        mainDropdown.classList.remove('active');
     });
 
     let currentHash = window.location.hash.substring(1);
