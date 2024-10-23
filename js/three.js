@@ -10,6 +10,7 @@ function initThreeJS() {
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
+        renderer.setClearColor(0x0d0d0d); // Set the canvas background color to black
 
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10);
         camera.position.z = 0;
