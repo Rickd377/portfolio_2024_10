@@ -67,17 +67,18 @@
             max-height: 400px;
             grid-row: span 2;
             align-self: center;
-            border-radius: 1px;
-            box-shadow: 
-                0 3px 0 $accent_color, 0 6px 0 $css_color, 0 9px 0 $dark-blue_color,
-                0 -3px 0 $accent_color, 0 -6px 0 $css_color, 0 -9px 0 $dark-blue_color,
-                3px 0 0 $accent_color, 6px 0 0 $css_color, 9px 0 0 $dark-blue_color,
-                -3px 0 0 $accent_color, -6px 0 0 $css_color, -9px 0 0 $dark-blue_color,
-                /* Add corners */
-                3px 3px 0 $accent_color, 6px 6px 0 $css_color, 9px 9px 0 $dark-blue_color,
-                -3px -3px 0 $accent_color, -6px -6px 0 $css_color, -9px -9px 0 $dark-blue_color,
-                3px -3px 0 $accent_color, 6px -6px 0 $css_color, 9px -9px 0 $dark-blue_color,
-                -3px 3px 0 $accent_color, -6px 6px 0 $css_color, -9px 9px 0 $dark-blue_color;
+            border-radius: 5px;
+            animation: fadeIn 1s ease-out forwards;
+            // box-shadow: 
+            //     0 3px 0 $accent_color, 0 6px 0 $css_color, 0 9px 0 $dark-blue_color,
+            //     0 -3px 0 $accent_color, 0 -6px 0 $css_color, 0 -9px 0 $dark-blue_color,
+            //     3px 0 0 $accent_color, 6px 0 0 $css_color, 9px 0 0 $dark-blue_color,
+            //     -3px 0 0 $accent_color, -6px 0 0 $css_color, -9px 0 0 $dark-blue_color,
+            //     /* Add corners */
+            //     3px 3px 0 $accent_color, 6px 6px 0 $css_color, 9px 9px 0 $dark-blue_color,
+            //     -3px -3px 0 $accent_color, -6px -6px 0 $css_color, -9px -9px 0 $dark-blue_color,
+            //     3px -3px 0 $accent_color, 6px -6px 0 $css_color, 9px -9px 0 $dark-blue_color,
+            //     -3px 3px 0 $accent_color, -6px 6px 0 $css_color, -9px 9px 0 $dark-blue_color;
             @media screen and (max-width: $tablet) {
                 margin: auto;
             }
