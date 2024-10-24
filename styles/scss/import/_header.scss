@@ -4,6 +4,7 @@ header {
     padding: 0 $header_padding;
     z-index: 1000;
     @include grid(1fr 1fr 1fr);
+
     @media screen and (max-width: $laptop) {
         display: none;
     }
@@ -22,7 +23,8 @@ header {
         font-size: 1.125rem;
 
         &.in-projects {
-            padding-left: 60px; /* Extend on the left side */
+            padding-left: 60px;
+            /* Extend on the left side */
         }
 
         a {
@@ -53,7 +55,8 @@ header {
             z-index: 9999;
 
             &.in-nav {
-                display: flex; /* Show when in nav */
+                display: flex;
+                /* Show when in nav */
             }
 
             &.dropdown-active {
@@ -82,7 +85,8 @@ header {
                     border-bottom: 1px solid lighten($primary_color, 60%);
                 }
 
-                .filter-options, .sort-options {
+                .filter-options,
+                .sort-options {
                     margin-top: 10px;
                     color: $text-dark_color;
                     display: flex;
@@ -181,7 +185,7 @@ header {
         z-index: 1000;
         min-width: 160px;
         flex-direction: column;
-        
+
         a {
             font-size: 1.2rem;
             padding: 5px 10px;
@@ -190,6 +194,7 @@ header {
             &:first-child {
                 padding-top: 10px;
             }
+
             &:last-child {
                 padding-bottom: 10px;
             }

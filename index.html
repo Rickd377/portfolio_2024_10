@@ -1,230 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rick Deurloo's portfolio website.">
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
-                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/src/core.min.js"></script>
-    <link rel="preload" href="./img/header_logo.webp" as="image">
-    <link rel="preload" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css" as="style">
-    <link rel="preload" href="./img/profile_img.webp">
-    <link rel="icon" href="./img/tab_icon.webp">
-    <link rel="stylesheet" href="./styles/dist/css/style.css">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rick Deurloo's portfolio website.">
+  <!-- preloads -->
+  <link rel="preload" href="./img/header_logo.webp" as="image">
+  <link rel="preload" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css" as="style">
+  <link rel="preload" href="./img/profile_img.webp">
+  <!-- script loads -->
+  <script type="importmap">
+    {
+        "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+        "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/src/core.min.js"></script>
+  <!-- style loads -->
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link rel="icon" href="./img/tab_icon.webp">
+  <link rel="stylesheet" href="./styles/dist/css/style.css">
+  <title>Portfolio</title>
 </head>
+
 <body>
-    <div id="loader">
-        <div class="spinner"></div>
+
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <img src="./img/header_logo.webp" alt="icon" loading="lazy" class="headerimg">
+    <nav>
+      <a href="#home" id="home-link">Home</a>
+      <a href="#about" id="about-link">About</a>
+      <a href="#projects" id="projects-link">Projects</a>
+      <a href="#contact" id="contact-link">Contact</a>
+    </nav>
+    <a href="./documents/resume_rick.pdf" class="sidebtn" target="_blank"><i class="fa-thin fa-file"></i> Resume</a>
+  </header>
+
+  <div class="main-dropdown">
+    <i class="fa-solid fa-bars"></i>
+    <div class="dropdown-content-header">
+      <a href="#home" id="dropdown-home-link">Home</a>
+      <a href="#about" id="dropdown-about-link">About</a>
+      <a href="#projects" id="dropdown-projects-link">Projects</a>
+      <a href="#contact" id="dropdown-contact-link">Contact</a>
     </div>
-    <header>
-        <img src="./img/header_logo.webp" alt="icon" loading="lazy" class="headerimg">
-        <nav>
-            <a href="#home" id="home-link">Home</a>
-            <a href="#about" id="about-link">About</a>
-            <a href="#projects" id="projects-link">Projects</a>
-            <a href="#contact" id="contact-link">Contact</a>
-        </nav>
-        <a href="./documents/resume_rick.pdf" class="sidebtn" target="_blank"><i class="fa-thin fa-file"></i> Resume</a>
-    </header>
-    <div class="main-dropdown">
-        <i class="fa-solid fa-bars"></i>
-        <div class="dropdown-content-header">
-            <a href="#home" id="dropdown-home-link">Home</a>
-            <a href="#about" id="dropdown-about-link">About</a>
-            <a href="#projects" id="dropdown-projects-link">Projects</a>
-            <a href="#contact" id="dropdown-contact-link">Contact</a>
+  </div>
+
+  <main>
+
+    <div id="home" class="section active">
+      <div class="text-wrapper">
+        <h1 class="title">
+          Hello. Welcome to my portfolio!<br>
+          I'm <span class="highlight">Rick,</span>
+        </h1>
+        <div class="typecontainer">
+          <span class="text second-text" id="typewriter"></span>
         </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/rick-deurloo-939934295/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/Rickd377" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/rickd377_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
-    <main>
-        <div id="home" class="section active">
-            <div class="text-wrapper">
-                <h1 class="title">
-                    Hello. Welcome to my portfolio!<br>
-                    I'm <span class="highlight">Rick,</span>
-                </h1>
-                <div class="typecontainer">
-                    <span class="text second-text" id="typewriter"></span>
-                </div>
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/rick-deurloo-939934295/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Rickd377" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/rickd377_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
+
+    <div id="about" class="section">
+      <div class="about-wrapper">
+        <div class="text-wrapper">
+          <h1>About <span>me:</span></h1>
+          <p>I'm a 17-year-old front-end developer with a passion for clean, visually appealing websites. I love coding and constantly push myself to improve, from mastering CSS to diving into SASS and a bit of Three.js. My latest project, this portfolio, is a personal favorite — it showcases my eye for detail and creativity in web design. Outside of coding, you’ll find me playing guitar or expanding my collection of over 60 unique Monster Energy cans. My goal is to work as a professional front-end developer or even start my own web development company in the future.</p>
         </div>
-        <div id="about" class="section">
-            <div class="about-wrapper">
-                <div class="text-wrapper">
-                    <h1>About <span>me:</span></h1>
-                    <p>I'm a 17-year-old front-end developer with a passion for clean, visually appealing websites. I love coding and constantly push myself to improve, from mastering CSS to diving into SASS and a bit of Three.js. My latest project, this portfolio, is a personal favorite — it showcases my eye for detail and creativity in web design. Outside of coding, you’ll find me playing guitar or expanding my collection of over 60 unique Monster Energy cans. My goal is to work as a professional front-end developer or even start my own web development company in the future.</p>
-                </div>
-                <div class="skills">
-                    <div class="skill html">
-                        <i class="fa-brands fa-html5"></i>
-                        <p>HTML</p>
-                        <p class="last">Intermediate</p>
-                    </div>
-                    <div class="skill css">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <p>CSS</p>
-                        <p class="last">Advanced</p>
-                    </div>
-                    <div class="skill javascript">
-                        <i class="fa-brands fa-js"></i>
-                        <p>JavaScript</p>
-                        <p class="last">Basic</p>
-                    </div>
-                    <div class="skill scss">
-                        <i class="fa-brands fa-sass"></i>
-                        <p>Sass</p>
-                        <p class="last">Intermediate</p>
-                    </div>
-                    <div class="skill php">
-                        <i class="fa-brands fa-php"></i>
-                        <p>PHP</p>
-                        <p class="last">Entry</p>
-                    </div>
-                    <div class="skill three">
-                        <i class="fa-light fa-cubes"></i>
-                        <p>Three.js</p>
-                        <p class="last">Entry</p>
-                    </div>
-                </div>
-                <img src="./img/profile_img.webp" alt="profile image" loading="lazy">
-            </div>
+        <div class="skills">
+          <div class="skill html">
+            <i class="fa-brands fa-html5"></i>
+            <p>HTML</p>
+            <p class="last">Intermediate</p>
+          </div>
+          <div class="skill css">
+            <i class="fa-brands fa-css3-alt"></i>
+            <p>CSS</p>
+            <p class="last">Advanced</p>
+          </div>
+          <div class="skill javascript">
+            <i class="fa-brands fa-js"></i>
+            <p>JavaScript</p>
+            <p class="last">Basic</p>
+          </div>
+          <div class="skill scss">
+            <i class="fa-brands fa-sass"></i>
+            <p>Sass</p>
+            <p class="last">Intermediate</p>
+          </div>
+          <div class="skill php">
+            <i class="fa-brands fa-php"></i>
+            <p>PHP</p>
+            <p class="last">Entry</p>
+          </div>
+          <div class="skill three">
+            <i class="fa-light fa-cubes"></i>
+            <p>Three.js</p>
+            <p class="last">Entry</p>
+          </div>
         </div>
-        <div id="projects" class="section">
-            <div class="filter-projects">
-                <i class="fa-regular fa-filter"></i>
-                <div class="dropdown">
-                    <div class="sort-options">
-                        <label><input type="radio" name="sort" value="newest"> Newest</label>
-                        <label><input type="radio" name="sort" value="oldest" checked> Oldest</label>
-                    </div>
-                    <div class="filter-options">
-                        <label><input type="checkbox" class="filter-checkbox" value="school"> School</label>
-                        <label><input type="checkbox" class="filter-checkbox" value="solo"> Solo</label>
-                        <label><input type="checkbox" class="filter-checkbox" value="group"> Group</label>
-                        <label><input type="checkbox" class="filter-checkbox" value="own"> Own</label>
-                    </div>
-                </div>
-                <div class="filter-count">0</div>
-            </div>
-            <div class="project-container">
-                <div class="project school solo">
-                    <img src="./img/technowire.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Technowire</h3>
-                        <p>Is my first ever programming project with HTML and CSS, this is a solo project for school. Looks: 4/10</p>
-                        <a href="./documents/technowire/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school solo">
-                    <img src="./img/coinchase.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Coinchase</h3>
-                        <p>Is a solo project for school where I made a replica of "Ganzenbord" but in my own way. Looks: 7/10</p>
-                        <a href="./documents/coinchase/JavaGame/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school group">
-                    <img src="./img/gamecraft.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Gamecraft</h3>
-                        <p>Is a group project for school where we would have a website from all our own games that we made. Looks: 5/10</p>
-                        <a href="./documents/gamecraft/html/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school solo">
-                    <img src="./img/guestbook.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Guestbook</h3>
-                        <p>Is a solo projects for school that I made with PHP to post messages with a session on it. Looks: 8/10</p>
-                        <a href="./documents/guestbook/Gastenboek/index.php" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school group">
-                    <img src="./img/ergowijzer.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Ergowijzer</h3>
-                        <p>Is a group project for school that is all about RSI, so ergonomic products. My page is the ergonomic mouse. Looks: 7/10</p>
-                        <a href="./documents/ergowijzer/php/index.php" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school solo">
-                    <img src="./img/yard.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Yard</h3>
-                        <p>Is supposed to be an English job application in a website that we had to replicate. Looks: 6/10</p>
-                        <a href="./documents/yard/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project school group">
-                    <img src="./img/bbe.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Food Delivery</h3>
-                        <p>Is a group project for school of a full food delivery order website. I mainly did the front-end. Looks: 7/10</p>
-                        <a href="./documents/food_delivery/index.php" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project own solo">
-                    <img src="./img/tunewave.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>TuneWave</h3>
-                        <p>Is a solo project which is a music player that is meant to look a bit like spotify. Looks: 9/10</p>
-                        <a href="./documents/tunewave/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-                <div class="project own solo">
-                    <img src="./img/personal_interface.webp" alt="project image" loading="lazy">
-                    <div class="content">
-                        <h3>Personal Interface</h3>
-                        <p>Is a solo project where i added all needed this to make a nice looking desktop. Looks: 9.5/10</p>
-                        <a href="./documents/personal_interface/index.html" target="_blank">Open project</a>
-                    </div>
-                </div>
-            </div>
+        <img src="./img/profile_img.webp" alt="profile image" loading="lazy">
+      </div>
+    </div>
+
+    <div id="projects" class="section">
+      <div class="filter-projects">
+        <i class="fa-regular fa-filter"></i>
+        <div class="dropdown">
+          <div class="sort-options">
+            <label><input type="radio" name="sort" value="newest"> Newest</label>
+            <label><input type="radio" name="sort" value="oldest" checked> Oldest</label>
+          </div>
+          <div class="filter-options">
+            <label><input type="checkbox" class="filter-checkbox" value="school"> School</label>
+            <label><input type="checkbox" class="filter-checkbox" value="solo"> Solo</label>
+            <label><input type="checkbox" class="filter-checkbox" value="group"> Group</label>
+            <label><input type="checkbox" class="filter-checkbox" value="own"> Own</label>
+          </div>
         </div>
-        <div id="contact" class="section">
-            <div class="form-wrapper">
-                <div class="text-wrapper">
-                    <h1>Contact Me Via</h1>
-                    <h3>584557@edu.rocmn.nl</h3>
-                    <p>Feel free to contact me with any inquiries or questions!</p>
-                </div>
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/rick-deurloo-939934295/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Rickd377" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/rickd377_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <h4>Or</h4>
-                <form class="contact-form" action="send_email.php" method="post">
-                    <div class="top-input-wrapper">
-                        <input type="text" id="name" name="name" placeholder="Name" required>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-                    </div>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off" required>
-                    <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+        <div class="filter-count">0</div>
+      </div>
+      <div class="project-container">
+        <div class="project school solo">
+          <img src="./img/technowire.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Technowire</h3>
+            <p>Is my first ever programming project with HTML and CSS, this is a solo project for school. Looks: 4/10</p>
+            <a href="./documents/technowire/index.html" target="_blank">Open project</a>
+          </div>
         </div>
-    </main>
-    <div id="blur-circle"></div>
-    <script src="./js/loader.js"></script>
-    <script src="./js/page.js"></script>
-    <script src="./js/filter_projects.js"></script>
-    <script src="./js/typewriter.js"></script>
-    <script type="module" src="./js/three.js"></script>
+        <div class="project school solo">
+          <img src="./img/coinchase.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Coinchase</h3>
+            <p>Is a solo project for school where I made a replica of "Ganzenbord" but in my own way. Looks: 7/10</p>
+            <a href="./documents/coinchase/JavaGame/index.html" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project school group">
+          <img src="./img/gamecraft.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Gamecraft</h3>
+            <p>Is a group project for school where we would have a website from all our own games that we made. Looks: 5/10</p>
+            <a href="./documents/gamecraft/html/index.html" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project school solo">
+          <img src="./img/guestbook.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Guestbook</h3>
+            <p>Is a solo projects for school that I made with PHP to post messages with a session on it. Looks: 8/10</p>
+            <a href="./documents/guestbook/Gastenboek/index.php" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project school group">
+          <img src="./img/ergowijzer.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Ergowijzer</h3>
+            <p>Is a group project for school that is all about RSI, so ergonomic products. My page is the ergonomic mouse. Looks: 7/10</p>
+            <a href="./documents/ergowijzer/php/index.php" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project school solo">
+          <img src="./img/yard.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Yard</h3>
+            <p>Is supposed to be an English job application in a website that we had to replicate. Looks: 6/10</p>
+            <a href="./documents/yard/index.html" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project school group">
+          <img src="./img/bbe.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Food Delivery</h3>
+            <p>Is a group project for school of a full food delivery order website. I mainly did the front-end. Looks: 7/10</p>
+            <a href="./documents/food_delivery/index.php" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project own solo">
+          <img src="./img/tunewave.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>TuneWave</h3>
+            <p>Is a solo project which is a music player that is meant to look a bit like spotify. Looks: 9/10</p>
+            <a href="./documents/tunewave/index.html" target="_blank">Open project</a>
+          </div>
+        </div>
+        <div class="project own solo">
+          <img src="./img/personal_interface.webp" alt="project image" loading="lazy">
+          <div class="content">
+            <h3>Personal Interface</h3>
+            <p>Is a solo project where i added all needed this to make a nice looking desktop. Looks: 9.5/10</p>
+            <a href="./documents/personal_interface/index.html" target="_blank">Open project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <div class="form-wrapper">
+        <div class="text-wrapper">
+          <h1>Contact Me Via</h1>
+          <h3>584557@edu.rocmn.nl</h3>
+          <p>Feel free to contact me with any inquiries or questions!</p>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/rick-deurloo-939934295/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/Rickd377" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/rickd377_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <h4>Or</h4>
+        <form class="contact-form" action="send_email.php" method="post">
+          <div class="top-input-wrapper">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off" required>
+          <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- scripts -->
+  <script src="./js/loader.js"></script>
+  <script src="./js/page.js"></script>
+  <script src="./js/filter_projects.js"></script>
+  <script src="./js/typewriter.js"></script>
+  <script type="module" src="./js/three.js"></script>
 </body>
 </html>
