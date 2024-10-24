@@ -1,128 +1,128 @@
 #contact {
-    @include flex();
-    backdrop-filter: blur(2px);
-    animation: slideIn 0.7s ease-out;
+  @include flex();
+  backdrop-filter: blur(2px);
+  animation: slideIn 0.7s ease-out;
 
-    .form-wrapper {
-        @include flex(1rem);
-        flex-direction: column;
-        width: fit-content;
-        max-width: 800px;
-        animation: fadeIn 0.7s ease-out forwards;
+  .form-wrapper {
+    @include flex(1rem);
+    flex-direction: column;
+    width: fit-content;
+    max-width: 800px;
+    animation: fadeIn 0.7s ease-out forwards;
 
-        @media screen and (max-width: $mobileS) {
-            width: 100%;
-        }
-
-        .socials {
-            @include flex(1rem);
-            width: fit-content;
-            backdrop-filter: blur(10px);
-            animation: fadeIn 0.7s ease-out forwards;
-
-            a {
-                font-size: 1.4rem;
-            }
-        }
-
-        .text-wrapper {
-            @include flex();
-            flex-direction: column;
-
-            h1 {
-                font-size: clamp(2.2rem, 3vw, 4rem);
-                color: $text_color;
-            }
-
-            h3 {
-                font-size: 2.5rem;
-                font-size: clamp(1.5rem, 2vw, 2.5rem);
-                color: $accent_color;
-            }
-
-            p {
-                color: $text-dark_color;
-                font-size: clamp(0.6rem, 1vw, 1.5rem);
-            }
-        }
-
-        h4 {
-            color: $text-dark_color;
-            font-size: 0.875rem;
-        }
-
-        form {
-            @include flex(1rem);
-            flex-direction: column;
-            width: 100%;
-
-            input,
-            textarea {
-                padding: 1rem 0;
-                background-color: transparent;
-                border: none;
-                outline: none;
-                color: $text_color;
-                border-bottom: 1px solid $white_color;
-
-                &::placeholder {
-                    color: darken($text_color, 10%);
-                }
-            }
-
-            textarea {
-                padding-top: 0;
-
-                &::-webkit-scrollbar {
-                    width: 12px;
-                }
-
-                &::-webkit-scrollbar-track {
-                    background: rgba(lighten($primary_color, 20%), 50%);
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: $accent_color;
-                    border-radius: 10px;
-                    border: 2px solid rgba(lighten($primary_color, 20%), 50%);
-                }
-
-                &::-webkit-scrollbar-thumb:hover {
-                    background-color: darken($accent_color, 10%);
-                    cursor: pointer;
-                }
-
-                &::-webkit-scrollbar-corner {
-                    background: lighten($primary_color, 20%);
-                }
-            }
-
-            input,
-            textarea,
-            .top-input-wrapper {
-                width: 100%;
-                resize: none;
-            }
-
-            .top-input-wrapper {
-                @include flex(1.5rem);
-            }
-
-            button {
-                align-self: flex-end;
-                padding: 1rem 2rem;
-                background: none;
-                border: 2px solid $white_color;
-                border-radius: 50px;
-                color: $text_color;
-                font-weight: 600;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $white_color;
-                    color: $accent-text_color;
-                }
-            }
-        }
+    @media screen and (max-width: $mobileS) {
+      width: 100%;
     }
+
+    .socials {
+      @include flex(1rem);
+      width: fit-content;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.7s ease-out forwards;
+
+      a {
+        font-size: 1.4rem;
+      }
+    }
+
+    .text-wrapper {
+      @include flex();
+      flex-direction: column;
+
+      h1 {
+        font-size: clamp(2.2rem, 3vw, 4rem);
+        color: $text_color;
+      }
+
+      h3 {
+        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 2vw, 2.5rem);
+        color: $accent_color;
+      }
+
+      p {
+        color: $text-dark_color;
+        font-size: clamp(0.6rem, 1vw, 1.5rem);
+      }
+    }
+
+    h4 {
+      color: $text-dark_color;
+      font-size: 0.875rem;
+    }
+
+    form {
+      @include flex(1rem);
+      flex-direction: column;
+      width: 100%;
+
+      input,
+      textarea {
+        padding: 1rem 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: $text_color;
+        border-bottom: 1px solid $white_color;
+
+        &::placeholder {
+          color: darken($text_color, 10%);
+        }
+      }
+
+      textarea {
+        padding-top: 0;
+
+        &::-webkit-scrollbar {
+          width: 12px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba(lighten($primary_color, 20%), 50%);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $accent_color;
+          border-radius: 10px;
+          border: 2px solid rgba(lighten($primary_color, 20%), 50%);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: darken($accent_color, 10%);
+          cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-corner {
+          background: lighten($primary_color, 20%);
+        }
+      }
+
+      input,
+      textarea,
+      .top-input-wrapper {
+        width: 100%;
+        resize: none;
+      }
+
+      .top-input-wrapper {
+        @include flex(1.5rem);
+      }
+
+      button {
+        align-self: flex-end;
+        padding: 1rem 2rem;
+        background: none;
+        border: 2px solid $white_color;
+        border-radius: 50px;
+        color: $text_color;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $white_color;
+          color: $accent-text_color;
+        }
+      }
+    }
+  }
 }
